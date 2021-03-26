@@ -13,3 +13,5 @@ and the output will be to output.txt, the columns of which are lon, lat, north, 
 
 If you run it out of the box, you should get a displacement profile that looks like
 
+![Example Figure](example.jpg)
+
