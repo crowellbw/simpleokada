@@ -12,16 +12,16 @@ stafile = 'sites.txt' #list of stations used
 [sta_lat,sta_lon,sta_alt] = location(stafile) #Location initialization
 
 
-eqlat = 43.01
-eqlon = -125
+eqlat = 43.01 #earthquake latitude
+eqlon = -125  #earthquake longitude
 eqdep = 10 #depth in km, positive down
-faultlen = 50
-faultwid = 20
-nlen = 20
-nwid = 10
-strikeang = 270
-dipang = 90
-SS = 1 #strike slip
+faultlen = 50 #fault length in km
+faultwid = 20 #fault width in km
+nlen = 20 #number of along length segments
+nwid = 10 #number of along width segments
+strikeang = 270 #strike angle, clockwise from north
+dipang = 90 #dip angle, following Okada's definition (strike of zero has dip towards the east)
+SS = 1 #strike slip, assigns this to all fault segments 
 DS = 0 #dip slip 
 
 
@@ -37,7 +37,7 @@ WID = WID*1000
 xrs = numpy.zeros([l2,l1])
 yrs = numpy.zeros([l2,l1])
 zrs = numpy.zeros([l2,l1])
-yrs2 = numpy.zeros([l2,l1])
+
 for i in range (0, l2):
         for j in range (0, l1):
                 (x1,y1) = ll2utm(sta_lon[j],sta_lat[j], eqlon,eqlat)
@@ -67,10 +67,10 @@ for i in range (0, l1):
 
 
 
-ffo = open('output.txt','w')
+ffo = open('output.txt','w') #output file
 
 for j in range(0, l1):
-        vert = "{0:.4f}".format(float(UN[j]*100))
+        vert = "{0:.4f}".format(float(UN[j]*100)) #I have it output cm since I assume slip is meters
         north = "{0:.4f}".format(float(NN[j]*100))
         east = "{0:.4f}".format(float(EN[j]*100))
         lonsta = "{0:.4f}".format(float(sta_lon[j]))
