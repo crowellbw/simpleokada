@@ -3,7 +3,7 @@ A simple Okada forward modeling package in Python
 
 
 The only things you need to change are the upper lines in okada_simple to match whatever source properties you want 
-and the station file, here is just sites.txt.
+and the station file, here is sites.txt.
 
 If all these scripts are in a single folder, just type
 
